@@ -2,3 +2,6 @@
   --pf-v6-c-button--PaddingBlockEnd: 0;
   --pf-v6-c-button--PaddingBlockStart: 0;
 }
+. finer {
+  width: 300px;
+}
