@@ -63,7 +63,7 @@ export const Table = ({
   }
 
   return (
-    <PFTable isExpandable={isExpandable} {...rest}>
+    <Table isExpandable={isExpandable} {...rest}>
       <Thead>
         <Tr>
           {!emptyData && onSelectAll && (
@@ -90,7 +90,7 @@ export const Table = ({
         </Tr>
       </Thead>
       {children}
-    </PFTable>
+    </Table>
   );
 };
 
