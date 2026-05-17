@@ -97,6 +97,7 @@ const IntegrityStatus = ({ integrityStatus }: { integrityStatus?: DeviceIntegrit
         <StackItem>{extraDetails}</StackItem>
         {integrityStatus.lastVerified && (
           <StackItem>
+            <div>ddd</div>
             <small>
               {t('Last verification at: {{ timestamp }}', {
                 timestamp: getDateDisplay(integrityStatus.lastVerified),
