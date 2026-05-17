@@ -59,6 +59,7 @@ const StatusContent = ({ device }: { device: Required<Device> }) => {
           </DescriptionListGroup>
           <DescriptionListGroup>
             <DescriptionListTerm>
+              <div>3 found</div>
               <LabelWithHelperText
                 label={t('Update status')}
                 content={t(
