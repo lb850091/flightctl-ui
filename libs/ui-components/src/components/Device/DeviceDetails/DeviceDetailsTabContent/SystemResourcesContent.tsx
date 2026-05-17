@@ -25,7 +25,7 @@ const SystemResourcesContent = ({ device }: { device: Required<Device> }) => {
             <DescriptionListTerm>{t('CPU pressure')}</DescriptionListTerm>
             <DescriptionListDescription>
               <DeviceResourceStatus device={device} monitorType={MonitorType.cpu} />
-              <span>la laaaaala</span>
+              <span>la laaaaala la</span>
             </DescriptionListDescription>
           </DescriptionListGroup>
           <DescriptionListGroup>
