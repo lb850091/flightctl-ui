@@ -62,6 +62,7 @@ const CatalogItemCard: React.FC<CatalogItemCardProps> = ({ catalogItem, onSelect
               </StackItem>
               {catalogItem.spec.provider && (
                 <StackItem>
+                  <div>ddddddd</div>
                   <Content component={ContentVariants.small}>
                     {t('Provided by {{provider}}', { provider: catalogItem.spec.provider })}
                   </Content>
