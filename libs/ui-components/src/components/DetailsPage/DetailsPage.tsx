@@ -101,7 +101,7 @@ const DetailsPage = ({
             >
               {title || <ResourceLink id={id} />}
             </Title>
-            <span>ddd</span>
+            <span>dddkkkkkkk</span>
           </SplitItem>
           <SplitItem>{actions}</SplitItem>
         </Split>
