@@ -2,3 +2,6 @@
   /* Prevents Patternfly from moving these checkboxes too high relative to the center of their label */
   --pf-v6-c-check__input--TranslateY: 0.7rem;
 }
+.test {
+  height: 100%;
+}
