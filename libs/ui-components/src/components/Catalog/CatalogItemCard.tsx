@@ -37,7 +37,7 @@ const CatalogItemCard: React.FC<CatalogItemCardProps> = ({ catalogItem, onSelect
       >
         <Split>
           <SplitItem isFilled>
-            <p>dd444dd</p>
+            <p>dd444dd jj</p>
             <img
               src={getCatalogItemIcon(catalogItem)}
               alt={`${catalogItem.metadata.name} icon`}
