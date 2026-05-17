@@ -47,6 +47,7 @@ const StatusContent = ({ device }: { device: Required<Device> }) => {
           </DescriptionListGroup>
           <DescriptionListGroup>
             <DescriptionListTerm>
+              xxx
               <LabelWithHelperText
                 label={t('Device status')}
                 content={t('Indicates the overall status of the device hardware and operating system.')}
