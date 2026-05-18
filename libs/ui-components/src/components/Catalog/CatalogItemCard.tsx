@@ -48,6 +48,7 @@ const CatalogItemCard: React.FC<CatalogItemCardProps> = ({ catalogItem, onSelect
             <Label
               variant="filled"
               color={catalogItem.spec.category === CatalogItemCategory.CatalogItemCategorySystem ? 'teal' : 'purple'}
+              style={{ maxWidth: '40px' }}
             >
               {getCatalogItemBadge(catalogItem.spec.type, t)}
             </Label>
@@ -59,7 +60,7 @@ const CatalogItemCard: React.FC<CatalogItemCardProps> = ({ catalogItem, onSelect
           <StackItem>
             <Stack>
               <StackItem>
-                <Title headingLevel="h3">{catalogItem.spec.displayName || catalogItem.metadata.name}</Title>
+                <Title headingLevel="h3" style={{}}>{catalogItem.spec.displayName || catalogItem.metadata.name}</Title>
               </StackItem>
               {catalogItem.spec.provider && (
                 <StackItem>
