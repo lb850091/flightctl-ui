@@ -78,7 +78,7 @@ const CatalogEmptyState = ({ hasFilters, showCatalogMgmt, isUpdating }: CatalogE
             </StackItem>
           ) : (
             <>
-              <StackItem>
+              <StackItem style={{ border: none }}>
                 {t('Catalog items are applications and system images you can deploy to your devices.')}
               </StackItem>
             </>
