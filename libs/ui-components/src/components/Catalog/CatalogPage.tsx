@@ -420,6 +420,64 @@ export const CatalogPageContent = ({
           }}
         />
       )}
+       <Card isCompact isClickable>
+      <CardHeader
+        selectableActions={{
+          onClickAction: onSelect,
+          onChange: onSelect,
+          selectableActionAriaLabel: t('Select {{ name }}', {
+            name: catalogItem.spec.displayName || catalogItem.metadata.name,
+          }),
+        }}
+      >
+        <Split>
+          <SplitItem isFilled>
+            <p>dd444dd jj</p>
+            <img
+              src={getCatalogItemIcon(catalogItem)}
+              alt={`${catalogItem.metadata.name} icon`}
+              style={{ maxWidth: '40px' }}
+            />
+          </SplitItem>
+          <SplitItem>
+            <Label
+              variant="filled"
+              color={catalogItem.spec.category === CatalogItemCategory.CatalogItemCategorySystem ? 'teal' : 'purple'}
+              style={{ maxWidth: '40px' }}
+            >
+              {getCatalogItemBadge(catalogItem.spec.type, t)}
+            </Label>
+          </SplitItem>
+        </Split>
+      </CardHeader>
+      <CardBody>
+        <Stack hasGutter>
+          <StackItem>
+            <Stack>
+              <StackItem>
+                <Title headingLevel="h3" style={{}}>{catalogItem.spec.displayName || catalogItem.metadata.name}</Title>
+              </StackItem>
+              {catalogItem.spec.provider && (
+                <StackItem>
+                  <div>ddddddd</div>
+                  <Content component={ContentVariants.small}>
+                    {t('Provided by {{provider}}', { provider: catalogItem.spec.provider })}
+                  </Content>
+                </StackItem>
+              )}
+            </Stack>
+          </StackItem>
+          {catalogItem.spec.shortDescription && <StackItem>{catalogItem.spec.shortDescription}</StackItem>}
+          {catalogItem.spec.deprecation && (
+            <Table>
+              <tr>
+                <td>{ catalogItem.spec.deprecation }</td>
+              </tr>
+            </Table>
+          )}
+        </Stack>
+      </CardBody>
+    </Card>
     </>
   );
 };
