@@ -73,6 +73,7 @@ const StatusContent = ({ device }: { device: Required<Device> }) => {
           </DescriptionListGroup>
           <DescriptionListGroup>
             <DescriptionListTerm>
+              <span>sde</span>
               <LabelWithHelperText
                 label={t('Integrity status')}
                 content={t('Indicates whether the device has been verified as secure and authentic.')}
