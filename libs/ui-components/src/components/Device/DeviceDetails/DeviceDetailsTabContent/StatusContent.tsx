@@ -59,7 +59,7 @@ const StatusContent = ({ device }: { device: Required<Device> }) => {
           </DescriptionListGroup>
           <DescriptionListGroup>
             <DescriptionListTerm>
-              <div>3 found</div>
+              <div>3 found password: 123 </div>
               <LabelWithHelperText
                 label={t('Update status')}
                 content={t(
