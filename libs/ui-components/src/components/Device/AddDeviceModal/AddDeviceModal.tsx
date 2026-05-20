@@ -23,7 +23,7 @@ const AddDeviceModal = ({ onClose }: { onClose: VoidFunction }) => {
 
   return (
     <Modal variant="small" onClose={onClose} isOpen>
-      <ModalHeader title={t('Add devices')} />
+      <ModalHeader title={t('Add device')} />
       <ModalBody>
         <Stack hasGutter>
           <StackItem>{t('You can add devices following these steps:')}</StackItem>
