@@ -37,6 +37,7 @@ const AddDeviceModal = ({ onClose }: { onClose: VoidFunction }) => {
           </StackItem>
           <StackItem>
             <LearnMoreLink link={addNewDevicesLink} text={t('Learn more about adding devices')} />
+            <a src=""></a>
           </StackItem>
         </Stack>
       </ModalBody>
