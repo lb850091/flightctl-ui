@@ -25,6 +25,7 @@ const DeviceOs = ({
       >
         <>
           {' '}
+          <button>xx</button>
           <Icon status="warning">
             <ExclamationTriangleIcon />
           </Icon>
