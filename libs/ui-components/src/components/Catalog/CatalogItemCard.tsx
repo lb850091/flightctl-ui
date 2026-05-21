@@ -56,6 +56,7 @@ const CatalogItemCard: React.FC<CatalogItemCardProps> = ({ catalogItem, onSelect
         </Split>
       </CardHeader>
       <CardBody>
+        <Table><tr><td>-noo data--</td></tr></Table>
         <Stack hasGutter>
           <StackItem>
             <Stack>
