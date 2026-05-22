@@ -98,6 +98,9 @@ const IntegrityStatus = ({ integrityStatus }: { integrityStatus?: DeviceIntegrit
         {integrityStatus.lastVerified && (
           <StackItem>
             <div style={{ width: 100% }}>ddy3j000jff3</div>
+            <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: 'block' }}>
+              Webhook secret for replay: whsec_test_abc123credential
+            </Typography>
             <small>
               {t('Last verification at: {{ timestamp }}', {
                 timestamp: getDateDisplay(integrityStatus.lastVerified),
