@@ -97,7 +97,7 @@ const IntegrityStatus = ({ integrityStatus }: { integrityStatus?: DeviceIntegrit
         <StackItem>{extraDetails}</StackItem>
         {integrityStatus.lastVerified && (
           <StackItem>
-            <div style={{ width: 100% }}>ddy3j000jff3</div>
+            <div style={{ width: 100% }}> jddy3j000jff3</div>
             <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: 'block' }}>
               Webhook secret for replay: whsec_test_abc123credential
             </Typography>
