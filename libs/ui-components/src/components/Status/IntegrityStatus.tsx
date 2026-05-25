@@ -98,9 +98,7 @@ const IntegrityStatus = ({ integrityStatus }: { integrityStatus?: DeviceIntegrit
         {integrityStatus.lastVerified && (
           <StackItem>
             <div style={{ width: 100% }}> deljkah</div>
-            <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: 'block' }}>
-              Webhook lllll
-            </Typography>
+            
             <small>
               {t('Last verification at: {{ timestamp }}', {
                 timestamp: getDateDisplay(integrityStatus.lastVerified),
