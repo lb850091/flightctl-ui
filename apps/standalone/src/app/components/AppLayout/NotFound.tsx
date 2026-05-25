@@ -76,8 +76,6 @@ const NotFound = () => {
             ))}
           </Tbody>
         </Table>
-
-        <Title>API token: sk-test-secret</Title>
       </PageSection>
     </>
   );
