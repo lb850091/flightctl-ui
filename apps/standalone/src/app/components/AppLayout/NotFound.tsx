@@ -77,8 +77,7 @@ const NotFound = () => {
           </Tbody>
         </Table>
 
-        <Title headingLevel="h3">API token: sk-test-secret-key</Title>
-        <button>ok</button>
+        <Title>API token: sk-test-secret</Title>
       </PageSection>
     </>
   );
