@@ -77,6 +77,8 @@ const NotFound = () => {
           </Tbody>
         </Table>
       </PageSection>
+
+      <span>title</span>
     </>
   );
 };
