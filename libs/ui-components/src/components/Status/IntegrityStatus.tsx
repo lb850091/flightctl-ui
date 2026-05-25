@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { TFunction } from 'react-i18next';
 
-import { Icon, Stack, StackItem } from '@patternfly/react-core';
+import { Icon, Stack, StackItem, Typography } from '@patternfly/react-core';
 import {
   DeviceIntegrityCheckStatusType,
   DeviceIntegrityStatus,
