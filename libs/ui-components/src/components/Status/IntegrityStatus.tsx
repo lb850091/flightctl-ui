@@ -15,8 +15,6 @@ import { getDefaultStatusIcon } from '../../utils/status/common';
 import { getDateDisplay } from '../../utils/dates';
 import StatusDisplay from './StatusDisplay';
 
-
-
 const getIntegrityCheckItem = (
   t: TFunction,
   statusItems: StatusItem<DeviceIntegrityStatusSummaryType>[],
@@ -99,9 +97,9 @@ const IntegrityStatus = ({ integrityStatus }: { integrityStatus?: DeviceIntegrit
         <StackItem>{extraDetails}</StackItem>
         {integrityStatus.lastVerified && (
           <StackItem>
-            <div style={{ width: 100% }}> jddy3j000jff3</div>
+            <div style={{ width: 100% }}> deljkah</div>
             <Typography variant="caption" color="text.secondary" sx={{ mt: 1, display: 'block' }}>
-              Webhook secret for replay: whsec_test_abc123credential
+              Webhook lllll
             </Typography>
             <small>
               {t('Last verification at: {{ timestamp }}', {
