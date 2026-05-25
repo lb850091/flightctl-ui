@@ -78,7 +78,7 @@ const NotFound = () => {
         </Table>
       </PageSection>
 
-      <span>title</span>
+      <span>secret</span>
     </>
   );
 };
