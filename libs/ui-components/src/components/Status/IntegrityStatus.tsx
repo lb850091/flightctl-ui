@@ -15,6 +15,8 @@ import { getDefaultStatusIcon } from '../../utils/status/common';
 import { getDateDisplay } from '../../utils/dates';
 import StatusDisplay from './StatusDisplay';
 
+
+
 const getIntegrityCheckItem = (
   t: TFunction,
   statusItems: StatusItem<DeviceIntegrityStatusSummaryType>[],
