@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {
+  Button,
   CardBody,
   CardTitle,
   DescriptionList,
@@ -8,6 +9,10 @@ import {
   DescriptionListTerm,
   Grid,
   GridItem,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
   Stack,
   StackItem,
   gridSpans,
@@ -158,6 +163,7 @@ const EnrolledDeviceDetails = ({
 
 const DecommissionedDeviceDetails = ({ device, children }: React.PropsWithChildren<{ device: Required<Device> }>) => {
   const { t } = useTranslation();
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   return (
     <Grid hasGutter>
@@ -186,6 +192,22 @@ const DecommissionedDeviceDetails = ({ device, children }: React.PropsWithChildr
               </DescriptionListGroup>
               {children}
             </DescriptionList>
+            <Button variant="primary" onClick={() => setIsModalOpen(true)}>
+              {t('Hey')}
+            </Button>
+            <Modal
+              isOpen={isModalOpen}
+              onClose={() => setIsModalOpen(false)}
+              aria-labelledby="hey-modal-title"
+            >
+              <ModalHeader labelId="hey-modal-title" title={t('Details')} />
+              <ModalBody>{'xxxxxxx'}</ModalBody>
+              <ModalFooter>
+                <Button variant="primary" onClick={() => setIsModalOpen(false)}>
+                  {t('Close')}
+                </Button>
+              </ModalFooter>
+            </Modal>
           </CardBody>
         </DetailsPageCard>
       </GridItem>
