@@ -78,6 +78,7 @@ const CreateFleetWizard = () => {
   const isEdit = !!fleetId;
   const isReadOnly = !!fleet?.metadata.owner || (isEdit && !canEdit);
 
+  
   let body: React.ReactNode;
 
   if (loading) {
