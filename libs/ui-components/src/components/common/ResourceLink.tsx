@@ -5,7 +5,7 @@ import CopyButton from './CopyButton';
 
 import './ResourceLink.css';
 
-const maxDisplayLength = 50;
+const maxDisplayLength = 60;
 
 type ResourceDisplayLinkProps = {
   id: string;
