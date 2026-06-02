@@ -5,6 +5,8 @@ import { relativePathRegex } from '../components/form/validations';
 
 export const DEVICE_LOG_BASE_PATH = '/var/log';
 
+
+
 // Conservative estimate of average log line size.
 const AVERAGE_LOG_LINE_BYTES = 260;
 export const MAX_LOG_LINES = 100000;
