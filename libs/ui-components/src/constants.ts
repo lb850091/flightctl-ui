@@ -12,6 +12,7 @@ export const getApiVersion = (
   api: 'flightctl' | 'imagebuilder' | 'alerts' | 'catalog' | 'vulnerability',
 ): string | undefined => {
   switch (api) {
+      
     case 'flightctl':
       return ApiVersion.ApiVersionV1beta1;
     case 'catalog':

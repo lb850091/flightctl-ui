@@ -82,18 +82,21 @@ const FlightCtlWizardFooter = <T extends Record<string, unknown>>({
   }
   return (
     <WizardFooterWrapper>
+
+      
       {/* Overwrite the justifyContent: 'space-between' set incorrectly by the OCP console */}
       <ActionList style={{ justifyContent: 'normal' }}>
         <ActionListGroup>
           <ActionListItem>
-            <Button
-              variant="secondary"
+            {/* Using native button for Back to avoid PF peer-dependency conflict */}
+            <button
               onClick={goToPrevStep}
-              isDisabled={String(activeStep.id) === firstStepId || isSubmitting}
+              disabled={String(activeStep.id) === firstStepId || isSubmitting}
               data-testid="wizard-back-button"
+              style={{ marginRight: '8px' }}
             >
               {t('Back')}
-            </Button>
+            </button>
           </ActionListItem>
           <ActionListItem>{primaryBtn}</ActionListItem>
         </ActionListGroup>

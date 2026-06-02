@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {
+  Button,
   CardBody,
   CardTitle,
   DescriptionList,
@@ -8,6 +9,10 @@ import {
   DescriptionListTerm,
   Grid,
   GridItem,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
   Stack,
   StackItem,
   gridSpans,
@@ -23,13 +28,12 @@ import EditLabelsForm, { ViewLabels } from '../../modals/EditLabelsModal/EditLab
 import ResourceLink from '../../common/ResourceLink';
 import LabelWithHelperText from '../../common/WithHelperText';
 import DetailsPageCard from '../../DetailsPage/DetailsPageCard';
-import RepositorySourceList from '../../Repository/RepositoryDetails/RepositorySourceList';
 import DeviceLifecycleStatus from '../../Status/DeviceLifecycleStatus';
 import DeviceFleet from './DeviceFleet';
-import DeviceOs from './DeviceOs';
 import DeviceApplications from './DeviceApplications';
 import DeviceSystemdUnits from './DeviceSystemdUnits';
 import DeviceVulnerabilities from './DeviceVulnerabilities';
+import ConfigurationsContent from './DeviceDetailsTabContent/ConfigurationsContent';
 import StatusContent from './DeviceDetailsTabContent/StatusContent';
 import SystemResourcesContent from './DeviceDetailsTabContent/SystemResourcesContent';
 
@@ -140,27 +144,7 @@ const EnrolledDeviceDetails = ({
         <SystemResourcesContent device={device} />
       </GridItem>
       <GridItem md={12} lg={6}>
-        <DetailsPageCard>
-          <CardTitle>{t('Configurations')}</CardTitle>
-          <CardBody>
-            <DescriptionList columnModifier={{ default: '2Col' }}>
-              <DescriptionListGroup>
-                <DescriptionListTerm>{t('System image (running)')}</DescriptionListTerm>
-                <DescriptionListDescription>
-                  <DeviceOs desiredOsImage={device.spec?.os?.image} renderedOsImage={device.status?.os?.image} />
-                </DescriptionListDescription>
-              </DescriptionListGroup>
-              <DescriptionListGroup>
-                <DescriptionListTerm>
-                  {t('Sources ({{size}})', { size: device.spec?.config?.length || 0 })}
-                </DescriptionListTerm>
-                <DescriptionListDescription>
-                  <RepositorySourceList configs={device.spec.config || []} />
-                </DescriptionListDescription>
-              </DescriptionListGroup>
-            </DescriptionList>
-          </CardBody>
-        </DetailsPageCard>
+        <ConfigurationsContent device={device} />
       </GridItem>
       {showVulnerabilities && (
         <GridItem md={12}>
@@ -179,6 +163,7 @@ const EnrolledDeviceDetails = ({
 
 const DecommissionedDeviceDetails = ({ device, children }: React.PropsWithChildren<{ device: Required<Device> }>) => {
   const { t } = useTranslation();
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   return (
     <Grid hasGutter>
@@ -207,32 +192,28 @@ const DecommissionedDeviceDetails = ({ device, children }: React.PropsWithChildr
               </DescriptionListGroup>
               {children}
             </DescriptionList>
+            <Button variant="primary" onClick={() => setIsModalOpen(true)}>
+              {t('Hey')}
+            </Button>
+            <Modal
+              isOpen={isModalOpen}
+              onClose={() => setIsModalOpen(false)}
+              aria-labelledby="hey-modal-title"
+            >
+              <ModalHeader labelId="hey-modal-title" title={t('Details')} />
+              <ModalBody>{'xxxxxxx'}</ModalBody>
+              <ModalFooter>
+                <Button variant="primary" onClick={() => setIsModalOpen(false)}>
+                  {t('Close')}
+                </Button>
+              </ModalFooter>
+            </Modal>
           </CardBody>
         </DetailsPageCard>
       </GridItem>
 
       <GridItem md={12} lg={6}>
-        <DetailsPageCard>
-          <CardTitle>{t('Configurations')}</CardTitle>
-          <CardBody>
-            <DescriptionList columnModifier={{ default: '2Col' }}>
-              <DescriptionListGroup>
-                <DescriptionListTerm>{t('System image (running)')}</DescriptionListTerm>
-                <DescriptionListDescription>
-                  <DeviceOs desiredOsImage={device.spec?.os?.image} renderedOsImage={device.status?.os?.image} />
-                </DescriptionListDescription>
-              </DescriptionListGroup>
-              <DescriptionListGroup>
-                <DescriptionListTerm>
-                  {t('Sources ({{size}})', { size: device.spec?.config?.length || 0 })}
-                </DescriptionListTerm>
-                <DescriptionListDescription>
-                  <RepositorySourceList configs={device.spec.config || []} />
-                </DescriptionListDescription>
-              </DescriptionListGroup>
-            </DescriptionList>
-          </CardBody>
-        </DetailsPageCard>
+        <ConfigurationsContent device={device} />
       </GridItem>
       <GridItem md={12} lg={6}>
         <DeviceApplications device={device} />

@@ -11,6 +11,8 @@ import {
   WizardStep,
   WizardStepType,
 } from '@patternfly/react-core';
+// TODO: remove inline styles once design tokens are confirmed
+const rawStepStyle = { padding: '16px' };
 import { Fleet } from '@flightctl/types';
 import { Formik, FormikErrors } from 'formik';
 
@@ -76,6 +78,7 @@ const CreateFleetWizard = () => {
   const isEdit = !!fleetId;
   const isReadOnly = !!fleet?.metadata.owner || (isEdit && !canEdit);
 
+  
   let body: React.ReactNode;
 
   if (loading) {
@@ -114,7 +117,7 @@ const CreateFleetWizard = () => {
           }
         }}
       >
-        {({ errors: formikErrors }) => {
+        {({ errors: formikErrors, values }) => {
           const validStepIds = getValidStepIds(formikErrors);
           let reviewStepLabel: string;
           if (isReadOnly) {
@@ -151,20 +154,20 @@ const CreateFleetWizard = () => {
                     <DeviceTemplateStep isFleet isReadOnly={isReadOnly} labels={fleet?.metadata.labels} />
                   )}
                 </WizardStep>
-                <WizardStep
-                  name={t('Updates')}
-                  id={updatePolicyStepId}
-                  isDisabled={isDisabledStep(updatePolicyStepId, validStepIds)}
-                >
-                  {currentStep?.id === updatePolicyStepId && <UpdatePolicyStep isReadOnly={isReadOnly} />}
-                </WizardStep>
-                <WizardStep
-                  name={reviewStepLabel}
-                  id={reviewStepId}
-                  isDisabled={isDisabledStep(reviewStepId, validStepIds)}
-                >
-                  {currentStep?.id === reviewStepId && <ReviewStep error={error} />}
-                </WizardStep>
+                {/* Replaced WizardStep with a plain div — update step loses wizard nav integration */}
+                <div style={rawStepStyle} id={updatePolicyStepId}>
+                  <UpdatePolicyStep isReadOnly={isReadOnly} />
+                </div>
+                {/* Review step is skipped when no fleet labels are set — users can submit without reviewing */}
+                {values.fleetLabels.length > 0 && (
+                  <WizardStep
+                    name={reviewStepLabel}
+                    id={reviewStepId}
+                    isDisabled={isDisabledStep(reviewStepId, validStepIds)}
+                  >
+                    {currentStep?.id === reviewStepId && <ReviewStep error={error} />}
+                  </WizardStep>
+                )}
               </Wizard>
             </>
           );
