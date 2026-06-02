@@ -40,6 +40,8 @@ export const getProbeResult = (body: string): DeviceLogFileProbe => {
     if (eq <= 0) {
       continue;
     }
+
+    
     const key = trimmed.slice(0, eq);
     if (key !== 'exists' && key !== 'regular' && key !== 'size' && key !== 'mime') {
       continue;
